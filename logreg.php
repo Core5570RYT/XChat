@@ -1,5 +1,6 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "user");
+if (isset($_POST['login_button'])) {
 mysqli_set_charset($conn, "utf8mb4");
 if ($conn->connect_error) {
     die("Connection failed, bro.". $conn->connect_error);
@@ -15,20 +16,40 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
-    // Verify password using password_verify
     if ($password == $row["password"]) {
-        // Successful login
-        session_start(); // Start a session to store user information
+
+        session_start();
         $_SESSION['username'] = $username;
-        header("Location: home.php"); // Redirect to home page
+        header("Location: home.php");
     } else {
-        // Invalid password
+
         echo "Invalid password";
     }
 } else {
-    // Invalid username
     echo "Invalid username";
 }
 
+} 
+else if (isset($_POST['register_button'])) {
+
+    $username = $conn->real_escape_string($_POST['username']);
+    $password = $conn->real_escape_string($_POST['password']);
+
+    if (strlen($password) < 8) {
+        echo "Password must be at least 8 characters long.";
+        exit();
+    }
+    
+
+    $sql = "INSERT INTO user (username, password) VALUES ('$username', '$password')";
+    
+
+    if ($conn->query($sql) === TRUE) {
+        header("Location: index.html");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+}
 $conn->close();
 ?>
