@@ -16,7 +16,7 @@
             </div>
             <div>
                 <h3>Welcome to XChat</h3><br>
-                <p>Please log in / sign up to continue.</p>
+                <p>Please login / sign-up to continue.</p>
             </div>
             <!--stuffs-->
             <div>
