@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        halo
         <div class="container-main">
             <div class="rowalign">
                 <img src="./assets/xchat_logo.png" style="width:60px; height:60px; margin: auto;">
