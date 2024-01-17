@@ -1,38 +1,34 @@
 <?php
-session_start();
+$conn = new mysqli("localhost", "root", "", "user");
+mysqli_set_charset($conn, "utf8mb4");
+if ($conn->connect_error) {
+    die("Connection failed, bro.". $conn->connect_error);
+}
 
-$conn = new mysqli('localhost', 'root', '', "main");
+$username = $conn->real_escape_string($_POST['username']);
+$password = $conn->real_escape_string($_POST['password']);
+echo "" . $username . " ". $password ."";
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$sql = "SELECT * FROM user WHERE username=?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$error = "";
+$sql = "SELECT * FROM user WHERE username = '$username'";
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    if (password_verify($password, $row['password'])) {
-        $_SESSION['user_id'] = $row['id'];
+
+    // Verify password using password_verify
+    if ($password == $row["password"]) {
+        // Successful login
+        session_start(); // Start a session to store user information
         $_SESSION['username'] = $username;
-        header("Location: welcome.php");
+        header("Location: home.php"); // Redirect to home page
+    } else {
+        // Invalid password
+        echo "Invalid password";
     }
 } else {
-    $error = "Invalid username or password";
+    // Invalid username
+    echo "Invalid username";
 }
 
-if ($error !== "") {
-?>
-<script>
-    var errorMessage = "<?php echo $error; ?>";
-</script>
-<?php
-}
-
-$stmt->close();
 $conn->close();
 ?>
