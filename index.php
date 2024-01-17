@@ -20,11 +20,13 @@
             </div>
             <!--stuffs-->
             <div>
+                <form action="index.php" method="post">
                 <input type="text" placeholder="Username"><br>
                 <input type="text" placeholder="Password">
                 <div class="rowalign">
                     <button type="button" style="margin-right:10px;">LOGIN</button>
                     <button type="button">SIGN-UP</button>
+                </form>
                 </div>
             </div>
         </div>
