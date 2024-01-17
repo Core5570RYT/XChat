@@ -20,11 +20,11 @@
             </div>
             <!--stuffs-->
             <div>
-                <form action="login.php" method="post">
+                <!--<form action="login.php" method="post">-->
                     <input type="text" placeholder="Username" required id="username" name="username"><br>
                     <div class="rowalign" style="width: 100%;">
                         <input type="password" placeholder="Password" required style="width: 83%;" id="password" name="password">
-                        <button type="button" id="logbutt" style="width: 60px; height: 101%; margin-left: 10px; margin-top: 12px;">Show</button>
+                        <button type="button" id="passbutt" style="width: 60px; height: 101%; margin-left: 10px; margin-top: 12px;" onclick="togglePass();">Show</button>
                     </div>
                     <p style="margin-top: 10px; font-size: 14px; color: rgb(202, 202, 202);" id="register" class="hidden">No account? <a onclick="switchMe(true);" style="color: white; cursor: pointer;">Create one.</a></p>
                     <p style="margin-top: 10px; font-size: 14px; color: rgb(202, 202, 202);" id="login" class="">Got an account? <a onclick="switchMe(false);" style="color: white; cursor: pointer;">Login now.</a></p>
@@ -32,12 +32,13 @@
                         <button type="button" id="logbutt" class="hidden" style="width: 100px;">LOGIN</button>
                         <button type="button" id="sigbutt" class="" style="width: 125px;">SIGN-UP</button>
                     </div>
-                </form>
+                <!--</form>-->
             </div>
         </div>
     </body>
 
     <script>
+        var passVisible = false;
         function switchMe(toThis){
             if (toThis){
                 document.getElementById("sigbutt").classList.remove("hidden");
@@ -54,6 +55,11 @@
             }
         }
 
-        function togglePass()
+        function togglePass() {
+            passVisible = !passVisible;
+            document.getElementById("password").type = (passVisible ? "text" : "password");
+            document.getElementById("passbutt").innerHTML = (passVisible ? "Hide" : "Show");
+            console.log(document.getElementById("password").type)
+        }
     </script>
 </html>
