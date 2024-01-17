@@ -20,10 +20,10 @@
             </div>
             <!--stuffs-->
             <div>
-                <form action="index.php" method="post">
-                    <input type="text" placeholder="Username" required><br>
+                <form action="login.php" method="post">
+                    <input type="text" placeholder="Username" required id="username" name="username"><br>
                     <div class="rowalign" style="width: 100%;">
-                        <input type="password" placeholder="Password" required style="width: 83%;">
+                        <input type="password" placeholder="Password" required style="width: 83%;" id="password" name="password">
                         <button type="button" id="logbutt" style="width: 60px; height: 101%; margin-left: 10px; margin-top: 12px;">Show</button>
                     </div>
                     <p style="margin-top: 10px; font-size: 14px; color: rgb(202, 202, 202);" id="register" class="hidden">No account? <a onclick="switchMe(true);" style="color: white; cursor: pointer;">Create one.</a></p>
