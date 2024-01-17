@@ -21,16 +21,39 @@
             <!--stuffs-->
             <div>
                 <form action="index.php" method="post">
-                    <input type="text" placeholder="Username"><br>
-                    <input type="text" placeholder="Password">
+                    <input type="text" placeholder="Username" required><br>
+                    <div class="rowalign" style="width: 100%;">
+                        <input type="password" placeholder="Password" required style="width: 83%;">
+                        <button type="button" id="logbutt" style="width: 60px; height: 101%; margin-left: 10px; margin-top: 12px;">Show</button>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 14px; color: rgb(202, 202, 202);" id="register" class="hidden">No account? <a onclick="switchMe(true);" style="color: white; cursor: pointer;">Create one.</a></p>
+                    <p style="margin-top: 10px; font-size: 14px; color: rgb(202, 202, 202);" id="login" class="">Got an account? <a onclick="switchMe(false);" style="color: white; cursor: pointer;">Login now.</a></p>
                     <div class="rowalign">
-                        <button type="button" style="margin-right:10px;">LOGIN</button>
-                        <button type="button">SIGN-UP</button>
+                        <button type="button" id="logbutt" class="hidden" style="width: 100px;">LOGIN</button>
+                        <button type="button" id="sigbutt" class="" style="width: 125px;">SIGN-UP</button>
                     </div>
                 </form>
             </div>
         </div>
     </body>
 
-    <script></script>
+    <script>
+        function switchMe(toThis){
+            if (toThis){
+                document.getElementById("sigbutt").classList.remove("hidden");
+                document.getElementById("logbutt").classList.add("hidden");
+
+                document.getElementById("login").classList.remove("hidden");
+                document.getElementById("register").classList.add("hidden");
+            } else {
+                document.getElementById("sigbutt").classList.add("hidden");
+                document.getElementById("logbutt").classList.remove("hidden");
+
+                document.getElementById("login").classList.add("hidden");
+                document.getElementById("register").classList.remove("hidden");
+            }
+        }
+
+        function togglePass()
+    </script>
 </html>

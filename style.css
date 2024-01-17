@@ -68,7 +68,7 @@ p {
     font-family: NexaLight;
 }
 
-input[type=text] {
+input {
     width: 400px;
     background-color: #2e2e2e;
     border: 1px rgb(110, 110, 110) solid;
@@ -82,12 +82,12 @@ input[type=text] {
 }
 
 button {
-    width: 200px;
     background-color: #2e2e2e;
     border: 1px rgb(110, 110, 110) solid;
     font-size: 14px;
     font-family: NexaLight;
     border-radius: 0px;
+    margin: auto;
     margin-top: 10px;
     color: white;
     letter-spacing: 1px;
