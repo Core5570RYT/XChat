@@ -25,15 +25,9 @@ body {
 .rowalign {
     display: flex;
     flex-direction: row;
-    margin-top:auto;
+    margin-top: auto;
     margin-bottom: auto;
     padding-bottom: 20px;
-}
-
-.container-main {
-    padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
 }
 
 h1 {
@@ -41,7 +35,7 @@ h1 {
     font-family: NeonRave;
     font-size: 36px;
     letter-spacing: 4px;
-    margin-top:auto;
+    margin-top: auto;
     margin-bottom: auto;
     margin-left: 20px;
 }
@@ -95,4 +89,48 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+#uploadContainer {
+    display: inline-block;
+}
+
+#uploadInput {
+    display: none;
+}
+
+#placeholderImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+#placeholderImage img {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid rgb(141, 141, 141);
+    object-fit: cover;
+}
+#placeholderImage img:hover {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.betterRow  {
+    text-align: center;
+}
+
+.rowaligncentered {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.container-main {
+    padding: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }

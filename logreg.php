@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
 
         session_start();
         $_SESSION['username'] = $username;
-        header("Location: pages/accountcreation.html");
+        header("Location: pages/accountcreation.php");
     } else {
 
         echo "Invalid password";
