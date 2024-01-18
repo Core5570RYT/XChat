@@ -1,0 +1,103 @@
+@font-face {
+    font-family: NeonRave;
+    src: url(../assets/fonts/nr.ttf);
+}
+
+@font-face {
+    font-family: Nexa;
+    src: url("../assets/fonts/FreeSansBold.ttf");
+}
+
+@font-face {
+    font-family: NexaLight;
+    src: url("../assets/fonts/FreeSans.ttf");
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    background-color: #0f0f0f;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.rowalign {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.container-main {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: white;
+    font-family: NeonRave;
+    margin: auto;
+    font-size: 36px;
+    letter-spacing: 4px;
+}
+
+h3,
+p {
+    /*border: 3px solid greenyellow;*/
+    color: white;
+    font-family: Nexa;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+p {
+    margin-top: -18px;
+    font-size: 20px;
+    font-family: NexaLight;
+}
+
+input {
+    width: 400px;
+    background-color: #2e2e2e;
+    border: 1px rgb(110, 110, 110) solid;
+    font-size: 16px;
+    font-family: NexaLight;
+    border-radius: 0px;
+    margin-top: 10px;
+    color: white;
+    letter-spacing: 1px;
+    padding: 5px
+}
+
+button {
+    background-color: #2e2e2e;
+    border: 1px rgb(110, 110, 110) solid;
+    font-size: 14px;
+    font-family: NexaLight;
+    border-radius: 0px;
+    margin: auto;
+    margin-top: 10px;
+    color: white;
+    letter-spacing: 1px;
+    padding: 5px
+}
+
+button:hover {
+    background-color: #3b3b3b;
+}
+
+.hidden {
+    display: none;
+}
