@@ -1,5 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "user");
+include 'dbconnect.php'; //make this shit to load the dbconnect php
+
 if (isset($_POST['login_button'])) {
 mysqli_set_charset($conn, "utf8mb4");
 if ($conn->connect_error) {
