@@ -1,9 +1,10 @@
 <?php
-include 'dbconnect.php'; //make this shit to load the dbconnect php
+include 'dbconnect.php';
 
 if (isset($_POST['login_button'])) {
 mysqli_set_charset($conn, "utf8mb4");
 if ($conn->connect_error) {
+    echo "error??";
     die("Connection failed, bro.". $conn->connect_error);
 }
 
