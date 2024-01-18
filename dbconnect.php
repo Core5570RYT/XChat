@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost"; //for god sake, even tho this doesn't needed i think its better to make this so its easier for later changes.
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "main";
@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 
 function createDatabase($conn, $dbname) {
     $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+    $conn->query($sql); // Execute the query
 }
 
 function createTable($conn, $dbname, $table) {
@@ -22,10 +23,12 @@ function createTable($conn, $dbname, $table) {
         username VARCHAR(16) UNIQUE NOT NULL,
         password VARCHAR(32) NOT NULL
     )";
+    $conn->query($sql); // Execute the query
 }
 
 $conn->select_db($dbname);
 
 createDatabase($conn, $dbname);
 createTable($conn, $dbname, 'user');
+$conn->select_db($dbname);
 ?>
